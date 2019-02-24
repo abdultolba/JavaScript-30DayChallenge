@@ -35,16 +35,18 @@ body,html {
 .playing {
     transform: scale(1.1);      /* Animate the flex item when the class 'playing' is added to the classList. */
     border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
 }
   
 kbd {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     display: block;
     font-size: 4rem;
 }
   
 .sound {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: #ffc600;
