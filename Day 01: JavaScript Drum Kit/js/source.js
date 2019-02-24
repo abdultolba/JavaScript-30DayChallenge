@@ -1,5 +1,4 @@
-// This event listener will play the corresponding audio file when a key is clicked and will animate it.
-window.addEventListener("keydown", (event) => {
+function playSound(event){
     // Retrieve the html audio element based on the key pressed
     const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${event.keyCode}"]`)
@@ -9,7 +8,7 @@ window.addEventListener("keydown", (event) => {
     audio.play();
 
     key.classList.add('playing');   // Add the class playing to the key to get it an animated effect 
-});
+}
 
 function removeTransition(event){
     if(event.propertyName !== "transform") return;  // Skip it if it was not transformed
@@ -19,3 +18,6 @@ function removeTransition(event){
 // Retrieve all the elements that transitioned and remove the effects when the transition ends
 const keys = document.querySelectorAll(".key"); 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+// This event listener will play the corresponding audio file when a key is clicked and will animate it.
+window.addEventListener("keydown", playSound);
